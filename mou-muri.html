@@ -369,22 +369,22 @@
 
       <h3 class="serif" style="font-size:14px;color:var(--sumi-green);margin:0 0 8px;">◆ 資産</h3>
       <table class="ledger">
-        <thead><tr><th style="width:30%">項目</th><th style="width:18%">名義</th><th style="width:20%">評価額（円）</th><th style="width:16%">特有財産</th><th style="width:16%"></th></tr></thead>
+        <thead><tr><th style="width:30%">項目</th><th style="width:18%">名義</th><th style="width:20%">評価額（万円）</th><th style="width:16%">特有財産</th><th style="width:16%"></th></tr></thead>
         <tbody id="assetBody"></tbody>
       </table>
       <button class="ghost" onclick="addRow('assets')">＋ 資産を追加</button>
 
       <h3 class="serif" style="font-size:14px;color:var(--shu);margin:26px 0 8px;">◆ 借金・負債</h3>
       <table class="ledger">
-        <thead><tr><th style="width:30%">項目</th><th style="width:18%">名義</th><th style="width:20%">残高（円）</th><th style="width:16%">特有債務</th><th style="width:16%"></th></tr></thead>
+        <thead><tr><th style="width:30%">項目</th><th style="width:18%">名義</th><th style="width:20%">残高（万円）</th><th style="width:16%">特有債務</th><th style="width:16%"></th></tr></thead>
         <tbody id="debtBody"></tbody>
       </table>
       <button class="ghost" onclick="addRow('debts')">＋ 借金を追加</button>
 
       <div class="close-box">
-        <div class="close-row"><span class="label">資産合計（分与対象）</span><span class="value amt plus" id="sumAssets">¥0</span></div>
-        <div class="close-row"><span class="label">借金合計（分与対象）</span><span class="value amt minus" id="sumDebts">¥0</span></div>
-        <div class="close-row total"><span class="label">分与対象の純資産</span><span class="value" id="sumNet">¥0</span></div>
+        <div class="close-row"><span class="label">資産合計（分与対象）</span><span class="value amt plus" id="sumAssets">0万円</span></div>
+        <div class="close-row"><span class="label">借金合計（分与対象）</span><span class="value amt minus" id="sumDebts">0万円</span></div>
+        <div class="close-row total"><span class="label">分与対象の純資産</span><span class="value" id="sumNet">0万円</span></div>
       </div>
       <div class="note">※ 特有財産（結婚前からの貯金・相続・贈与など）は原則として分与の対象になりません。判断に迷う項目は、いったんチェックなしで入れておき、あとで見直せます。</div>
     </section>
@@ -399,17 +399,17 @@
       </div>
 
       <div class="result-card">
-        <div class="close-row"><span class="label">純資産（前ページの合計）</span><span class="value" id="simNet">¥0</span></div>
-        <div class="close-row"><span class="label">自分の取得目標額</span><span class="value" id="simSelfTarget">¥0</span></div>
-        <div class="close-row"><span class="label">相手の取得目標額</span><span class="value" id="simPartnerTarget">¥0</span></div>
+        <div class="close-row"><span class="label">純資産（前ページの合計）</span><span class="value" id="simNet">0万円</span></div>
+        <div class="close-row"><span class="label">自分の取得目標額</span><span class="value" id="simSelfTarget">0万円</span></div>
+        <div class="close-row"><span class="label">相手の取得目標額</span><span class="value" id="simPartnerTarget">0万円</span></div>
       </div>
 
       <h3 class="serif" style="font-size:14px;margin:26px 0 8px;">現在の名義ベースとの差額（代償金）</h3>
       <p class="lead" style="margin-top:0;">今の名義のまま分けると、目標額とズレが出ることがあります。そのズレを現金で調整するのが代償金です。</p>
       <div class="close-box">
-        <div class="close-row"><span class="label">自分名義の純資産（現状）</span><span class="value" id="holdSelf">¥0</span></div>
-        <div class="close-row"><span class="label">相手名義の純資産（現状）</span><span class="value" id="holdPartner">¥0</span></div>
-        <div class="close-row total"><span class="label" id="daishoLabel">代償金</span><span class="value" id="daishoValue">¥0</span></div>
+        <div class="close-row"><span class="label">自分名義の純資産（現状）</span><span class="value" id="holdSelf">0万円</span></div>
+        <div class="close-row"><span class="label">相手名義の純資産（現状）</span><span class="value" id="holdPartner">0万円</span></div>
+        <div class="close-row total"><span class="label" id="daishoLabel">代償金</span><span class="value" id="daishoValue">0万円</span></div>
       </div>
       <div class="note" id="daishoNote"></div>
     </section>
@@ -420,14 +420,14 @@
 
       <div class="grid2">
         <div>
-          <div class="field"><label>支払う側（義務者）の年収（額面・円）</label><input type="number" id="incPayer" value="0" oninput="calcChild()"></div>
+          <div class="field"><label>支払う側（義務者）の年収（額面・万円）</label><input type="number" id="incPayer" value="0" oninput="calcChild()"></div>
           <div class="field"><label>義務者の就業形態</label>
             <select id="typePayer" onchange="calcChild()"><option value="employee">給与所得者</option><option value="business">自営業者</option></select>
           </div>
           <div class="field"><label>子の人数</label><input type="number" id="childCount" value="1" min="0" oninput="calcChild()"></div>
         </div>
         <div>
-          <div class="field"><label>受け取る側（権利者）の年収（額面・円）</label><input type="number" id="incPayee" value="0" oninput="calcChild()"></div>
+          <div class="field"><label>受け取る側（権利者）の年収（額面・万円）</label><input type="number" id="incPayee" value="0" oninput="calcChild()"></div>
           <div class="field"><label>権利者の就業形態</label>
             <select id="typePayee" onchange="calcChild()"><option value="employee">給与所得者</option><option value="business">自営業者</option></select>
           </div>
@@ -439,7 +439,7 @@
 
       <div class="result-card">
         <div class="label" style="font-size:12.5px;color:var(--ink-soft);">養育費の目安（月額・子全員分）</div>
-        <div class="big" id="childResult">¥0 / 月</div>
+        <div class="big" id="childResult">0万円 / 月</div>
       </div>
       <div class="note">計算式：基礎収入＝総収入×係数（給与0.54／自営0.61）。子の生活費指数は0〜14歳＝62、15歳以上＝85（親を100とする）。この指数按分で義務者負担分を算出しています。実務の算定表は収入帯ごとに幅（レンジ）で示されるため、実際の調停ではその幅の中で調整されます。</div>
 
@@ -449,7 +449,7 @@
 
       <div class="result-card" style="border-color:var(--shu);background:var(--shu-pale);margin-top:16px;">
         <div class="label" style="font-size:12.5px;color:var(--ink-soft);">慰謝料の目安（チェックした事由から算出）</div>
-        <div class="big" style="color:var(--shu);" id="faultResult">¥0</div>
+        <div class="big" style="color:var(--shu);" id="faultResult">0万円</div>
       </div>
       <div class="warn">証拠がない場合、実際の請求では認められにくくなります。LINE・写真・診断書・録音・日記など、可能な範囲で記録を残しておきましょう。この金額はあくまで目安で、実際は婚姻期間・悪質性・収入などにより増減します。上限の目安として300万円程度が一般的です。</div>
     </section>
@@ -487,10 +487,10 @@
       <p class="lead">ここまでの内容をまとめて確認します。すべて整えば、あとは窓口に届け出るだけです。</p>
 
       <div class="close-box">
-        <div class="close-row"><span class="label">財産分与の目標額（自分）</span><span class="value" id="finalSelf">¥0</span></div>
-        <div class="close-row"><span class="label">代償金</span><span class="value" id="finalDaisho">¥0</span></div>
-        <div class="close-row"><span class="label">養育費の目安（月額）</span><span class="value" id="finalChild">¥0</span></div>
-        <div class="close-row"><span class="label">慰謝料の目安</span><span class="value" id="finalFault">¥0</span></div>
+        <div class="close-row"><span class="label">財産分与の目標額（自分）</span><span class="value" id="finalSelf">0万円</span></div>
+        <div class="close-row"><span class="label">代償金</span><span class="value" id="finalDaisho">0万円</span></div>
+        <div class="close-row"><span class="label">養育費の目安（月額）</span><span class="value" id="finalChild">0万円</span></div>
+        <div class="close-row"><span class="label">慰謝料の目安</span><span class="value" id="finalFault">0万円</span></div>
         <div class="close-row total"><span class="label">書類チェックリストの進捗</span><span class="value" id="finalDocs">0 / 0</span></div>
       </div>
 
@@ -530,7 +530,14 @@ let idSeq = {assets: Math.max(0,...state.assets.map(a=>a.id))+1, debts: Math.max
 
 function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
 function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
-function yen(n){ n = Math.round(n||0); return (n<0?"−":"") + "¥" + Math.abs(n).toLocaleString("ja-JP"); }
+function man(n){
+  n = Math.round((n||0)*10)/10;
+  const sign = n<0 ? "−" : "";
+  const abs = Math.abs(n);
+  const isInt = Math.abs(abs - Math.round(abs)) < 0.05;
+  const str = isInt ? Math.round(abs).toLocaleString("ja-JP") : abs.toLocaleString("ja-JP",{minimumFractionDigits:1,maximumFractionDigits:1});
+  return sign + str + "万円";
+}
 
 /* ---------- tabs ---------- */
 const tabs = [
@@ -614,9 +621,9 @@ function computeAll(){
   const totalDebts = inc(state.debts);
   const net = totalAssets - totalDebts;
 
-  document.getElementById("sumAssets").textContent = yen(totalAssets);
-  document.getElementById("sumDebts").textContent = "−" + yen(totalDebts).replace("¥","¥");
-  document.getElementById("sumNet").textContent = yen(net);
+  document.getElementById("sumAssets").textContent = man(totalAssets);
+  document.getElementById("sumDebts").textContent = totalDebts>0 ? "−"+man(totalDebts) : man(0);
+  document.getElementById("sumNet").textContent = man(net);
 
   // holdings by owner (joint split 50/50 for "current" view)
   const holding = who => {
@@ -633,11 +640,11 @@ function computeAll(){
 
   document.getElementById("ratioSlider").value = ratio;
   document.getElementById("ratioSelfLabel").textContent = `${100-ratio} : ${ratio}`;
-  document.getElementById("simNet").textContent = yen(net);
-  document.getElementById("simSelfTarget").textContent = yen(targetSelf);
-  document.getElementById("simPartnerTarget").textContent = yen(targetPartner);
-  document.getElementById("holdSelf").textContent = yen(holdSelf);
-  document.getElementById("holdPartner").textContent = yen(holdPartner);
+  document.getElementById("simNet").textContent = man(net);
+  document.getElementById("simSelfTarget").textContent = man(targetSelf);
+  document.getElementById("simPartnerTarget").textContent = man(targetPartner);
+  document.getElementById("holdSelf").textContent = man(holdSelf);
+  document.getElementById("holdPartner").textContent = man(holdPartner);
 
   const diff = targetSelf - holdSelf; // positive: self should receive more
   const daishoLabel = document.getElementById("daishoLabel");
@@ -649,11 +656,11 @@ function computeAll(){
     daishoNote.textContent = "現在の名義割合が、目標の分与割合とほぼ一致しています。";
   } else if(diff > 0){
     daishoLabel.textContent = "相手 → 自分 への支払い";
-    daishoValue.textContent = yen(diff);
+    daishoValue.textContent = man(diff);
     daishoNote.textContent = "現在の名義では自分の取り分が目標額より少ないため、この金額を相手から受け取ることで目標割合に一致します。";
   } else {
     daishoLabel.textContent = "自分 → 相手 への支払い";
-    daishoValue.textContent = yen(-diff);
+    daishoValue.textContent = man(-diff);
     daishoNote.textContent = "現在の名義では自分の取り分が目標額より多いため、この金額を相手に支払うことで目標割合に一致します。";
   }
   save();
@@ -688,7 +695,7 @@ function calcChild(){
   const monthlyAnnual = childCostFromPayer * shareRatio;
   const monthly = monthlyAnnual / 12;
 
-  document.getElementById("childResult").textContent = (count>0 ? yen(monthly) : "¥0") + " / 月";
+  document.getElementById("childResult").textContent = (count>0 ? man(monthly) : "0万円") + " / 月";
   state.child = {incPayer,incPayee,typePayer,typePayee,count,ageIdx};
   save();
   renderFinal();
@@ -733,11 +740,11 @@ function toggleFault(id){
   save(); renderFaults(); computeFault(); renderFinal();
 }
 function faultTotalYen(){
-  return faultFactors.reduce((s,f)=> s + (state.faults[f.id]? f.points:0), 0) * 10000;
+  return faultFactors.reduce((s,f)=> s + (state.faults[f.id]? f.points:0), 0);
 }
 function computeFault(){
   const amount = faultTotalYen();
-  document.getElementById("faultResult").textContent = amount>0 ? yen(amount)+"（目安）" : "¥0";
+  document.getElementById("faultResult").textContent = amount>0 ? man(amount)+"（目安）" : "0万円";
 }
 
 /* ---------- final summary (仕上げ) ---------- */
@@ -764,10 +771,10 @@ function renderFinal(){
   };
   const diff = targetSelf - holding("self");
 
-  document.getElementById("finalSelf").textContent = yen(targetSelf);
-  document.getElementById("finalDaisho").textContent = Math.abs(diff)<1 ? "調整不要" : yen(Math.abs(diff));
-  document.getElementById("finalChild").textContent = document.getElementById("childResult") ? document.getElementById("childResult").textContent : "¥0 / 月";
-  document.getElementById("finalFault").textContent = faultTotalYen()>0 ? yen(faultTotalYen()) : "¥0";
+  document.getElementById("finalSelf").textContent = man(targetSelf);
+  document.getElementById("finalDaisho").textContent = Math.abs(diff)<1 ? "調整不要" : man(Math.abs(diff));
+  document.getElementById("finalChild").textContent = document.getElementById("childResult") ? document.getElementById("childResult").textContent : "0万円 / 月";
+  document.getElementById("finalFault").textContent = faultTotalYen()>0 ? man(faultTotalYen()) : "0万円";
 
   const doneDocs = state.checklist.filter(i=>i.done).length;
   document.getElementById("finalDocs").textContent = `${doneDocs} / ${state.checklist.length}`;
@@ -797,8 +804,8 @@ function generateDraft(){
   const net = totalAssets - totalDebts;
   const ratio = state.ratio;
   const targetSelf = net*(ratio/100);
-  const assetLines = state.assets.map(r=>`　・${r.name||"（未記入）"}（名義：${ownerLabel(r.owner)}）　評価額 ${yen(r.value)}${r.exclude?"　※特有財産のため対象外":""}`).join("\n");
-  const debtLines = state.debts.map(r=>`　・${r.name||"（未記入）"}（名義：${ownerLabel(r.owner)}）　残高 ${yen(r.value)}${r.exclude?"　※特有債務のため対象外":""}`).join("\n");
+  const assetLines = state.assets.map(r=>`　・${r.name||"（未記入）"}（名義：${ownerLabel(r.owner)}）　評価額 ${man(r.value)}${r.exclude?"　※特有財産のため対象外":""}`).join("\n");
+  const debtLines = state.debts.map(r=>`　・${r.name||"（未記入）"}（名義：${ownerLabel(r.owner)}）　残高 ${man(r.value)}${r.exclude?"　※特有債務のため対象外":""}`).join("\n");
   const childMonthly = document.getElementById("childResult").textContent;
   const faultAmount = faultTotalYen();
 
@@ -821,11 +828,11 @@ ${assetLines || "　（未記入）"}
 【借金・負債】
 ${debtLines || "　（未記入）"}
 
-【分与対象の純資産】　${yen(net)}
+【分与対象の純資産】　${man(net)}
 
 第3条（財産分与）
 甲乙は、前条の純資産について、甲　${100-ratio}％：乙　${ratio}％の割合で分与することに合意する。
-乙の取得目標額は ${yen(targetSelf)} とし、名義との差額については代償金として調整する。
+乙の取得目標額は ${man(targetSelf)} とし、名義との差額については代償金として調整する。
 
 第4条（養育費）
 乙は甲に対し、子の養育費として月額 ${childMonthly}（目安）を、子が満20歳に達するまで、毎月末日限り、甲が指定する口座に振り込んで支払う。
@@ -833,7 +840,7 @@ ${debtLines || "　（未記入）"}
 
 第5条（慰謝料）
 ${faultAmount>0
-  ? `乙は甲に対し、本件離婚に伴う慰謝料として金${yen(faultAmount)}を、　　年　　月　　日限り、甲が指定する口座に振り込んで支払う。\n※金額は、有責事由チェックに基づく目安であり、必ず証拠の有無を確認のうえ双方で協議すること。`
+  ? `乙は甲に対し、本件離婚に伴う慰謝料として金${man(faultAmount)}を、　　年　　月　　日限り、甲が指定する口座に振り込んで支払う。\n※金額は、有責事由チェックに基づく目安であり、必ず証拠の有無を確認のうえ双方で協議すること。`
   : `甲乙間において、本件離婚に関する慰謝料の定めはない。`}
 
 第6条（面会交流）
